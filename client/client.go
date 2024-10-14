@@ -13,7 +13,7 @@ func read(conn net.Conn) {
 	reader := bufio.NewReader(conn)
 	for {
 		msg, _ := reader.ReadString('\n')
-		fmt.Printf(msg)
+		fmt.Println(":: ", msg)
 	}
 }
 
@@ -21,7 +21,7 @@ func write(conn net.Conn) {
 	//TODO Continually get input from the user and send messages to the server.
 	stdin := bufio.NewReader(os.Stdin)
 	for {
-		fmt.Printf("Enter text->")
+		fmt.Println("Enter text->")
 		msg, _ := stdin.ReadString('\n')
 
 		if msg == "exit\n" {
